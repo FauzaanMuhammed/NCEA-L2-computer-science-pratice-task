@@ -26,10 +26,12 @@ def add_row():
 
     if 5>int(camper_num_entry.get()) or 10<int(camper_num_entry.get()):
         invalid_camper_num=1
-        button["text"]="Invalid"
+        button["font"]="monke",8 # Changes font size to fit in the label
+        button["text"]=f"5-10 Campers per group"
 
 
     else: # If the camper number is valid as stated in line 23, continue, otherwise don't
+        button["font"] = "monke", 9 # Changes font size to default once it has been changed
         button["text"]="Click to add data"
         invalid_camper_num=0
     # Removes any old data still on screen below row 2 to prevent stacking
