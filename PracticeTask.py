@@ -10,6 +10,10 @@ data_list=[]
 list_initializer=0
 update_counter=0
 
+def quit_command(): # Command for quitting
+    root.destroy()
+
+
 def add_row():
     # Global variables can be accessed and put on all functions without any errors.
     global quad_count
@@ -121,7 +125,7 @@ camper_num_text.grid(row=0,column=2)
 weather_entry = tk.Entry(root,width=10)
 weather_entry.grid(row=1,column=3)
 
-weather_text=Label(text="weather",width=10)
+weather_text=Label(text="Weather",width=10)
 weather_text.grid(row=0,column=3)
 
 # Moving on
@@ -134,6 +138,10 @@ moving_on_text.grid(row=0,column=4)
 # Data add button, uses function from line 5
 button=Button(text="Click to add data", command=add_row)
 button.grid(row=2,column=0)
+
+# Quit button
+quit_button = Button(text="Quit",command=quit_command,bg="red")
+quit_button.grid(row=1,column=5)
 
 # Geometry and constant loop to keep window open
 root.geometry("650x450")
